@@ -1,0 +1,66 @@
+
+<%- include('./header.admin.ejs')%>
+    <div class="primary-nav">
+
+        <button href="#" class="hamburger open-panel nav-toggle">
+    <span class="screen-reader-text">Menu</span>
+    </button>
+    
+        <nav role="navigation" class="menu">
+    
+            <a href="#" class="logotype"> <img  style="width: 40px;" src="/images/B.png" alt=""> Badr</a>
+    
+            <div class="overflow-container">
+    
+                <ul class="menu-dropdown">
+    
+                    <li><a href="/admin/dashboard" class="<%= page === 'dashboard' ? 'text-light' : '' %>" >Dashboard</a><span class="icon"><i class="fa-solid fa-gauge-high"></i></span></li>
+
+                    <li><a href="/admin/add" class="<%= page === 'add-product' ? 'text-light' : '' %>" >Add Product</a><span class="icon"><i class="fa-solid fa-circle-plus"></i></span></li>
+
+                    <li><a href="/admin/manage">Manage Products</a><span class="icon"><i class="fa-solid fa-bars-progress"></i></span></li>
+    
+                    <li><a href="#">Messages</a><span class="icon"><i class="fa fa-envelope"></i></span></li>
+
+                    <li><a href="/">Back To Home</a><span class="icon"><i class="fa-solid fa-house-chimney"></i></span></li>
+    
+                </ul>
+    
+            </div>
+    
+        </nav>
+    
+    </div>
+    
+    <div class="new-wrapper">
+    
+        <div id="main">
+            <div id="main-contents">
+
+              <!-- dashboard page -->
+              <!--======================================================================================-->
+              <% if(page === 'dashboard') { %>
+               <img style="width: 100%;margin: auto; display: block;" src="/images/dashboard.png" alt="">
+               <% } %>
+               <!--======================================================================================-->
+
+               <!-- add product page -->
+               <!--======================================================================================-->
+               <% if(page === 'add-product') { %>
+                <%- include('./add-product.ejs') %>
+                <% } %>
+                <!--======================================================================================-->
+                
+                <!-- mange products page -->
+                <!--======================================================================================-->
+                <% if(page === 'manage-orders') { %>
+                    <%- include('./manage-orders.ejs') %>
+                <% } %>
+                <!--======================================================================================-->
+
+            </div>
+    
+        </div>
+    
+    </div>
+  <%- include('./footer.admin.ejs')%>

@@ -1,0 +1,70 @@
+<%- include('components/header.ejs') %> 
+<%- include('components/nav.ejs') %>
+<%if(!product){%>
+  <div class="col-6 offset-3 text-center">
+    <p class="mt-5 text-primary" style="font-size: 80px;"><i class="fa-solid fa-cart-arrow-down"></i></p>
+    <p class="h4 text-secondary text-center">No Products Found</p>
+  </div>
+<%}else{%>
+  <div class="container mt-5 mb-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-10">
+            <div class="product-card">
+                <div class="row">
+                    <div class="col-md-6 text-center m-auto">
+                      <img style="width: 75%;height: 400px;" class="ms-3" src="<%= product.image%>" />
+                    </div>
+                    <div class="col-md-6">
+                        <div class="product p-4">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center"> </div> 
+                                <a href="/">
+                                  <span class="text-primary h4">
+                                    <i class="fa-solid fa-house-chimney"></i>
+                                  </span>
+                                </a>
+                            </div>
+                            <div class=" mb-3"> 
+                              <span class="text-uppercase text-muted brand">New</span>
+                                <h5 class="text-uppercase"><%= product.title%></h5>
+                                <div class="price mb-1"> 
+                                  <span class="act-price">$<%= product.price%></span>
+                                  <small class="dis-price">$<%= (product.price * 0.15 + product.price).toFixed(2)%></small>
+                                </div>
+                                <span>Product ID : <%= product.id %> </span>
+                            </div>
+                            <p class="about"><%= product.description%></p>
+                            <div class="sizes mt-4">
+                                <h6 class="text-uppercase">Reviews</h6>
+                                <span class="h6 text-warning">
+                                  <i class="fa-solid fa-star"></i>
+                                  <i class="fa-solid fa-star"></i>
+                                  <i class="fa-solid fa-star"></i>
+                                  <i class="fa-regular fa-star"></i>
+                                  <i class="fa-regular fa-star"></i>
+                                </span> 
+                            </div>
+                            <div class="cart mt-4 align-items-center text-end"> 
+                              <i class="fa fa-share-alt text-muted mx-2"></i> 
+                              <i class="fa fa-heart text-muted"></i>
+                              <form action="/cart" method="POST" class="d-inline">
+                                <input type="hidden" name="amount" value="1"/>
+                                <input type="hidden" name="title" value="<%= product.title%>"/>
+                                <input type="hidden" name="price" value="<%= product.price%>"/>
+                                <input type="hidden" name="image" value="<%= product.image%>"/>
+                                <input type="hidden" name="description" value="<%= product.description%>"/>
+                                <input type="hidden" name="productId" value="<%= product.id%>"/>
+                                <input type="hidden" name="redirectTo" value="/product/<%= product.id%>"/>
+                                <button type="submit" class="btn btn-primary text-uppercase m-2 px-4">Add to cart</button>
+                              </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+<%}%>
+<%- include('components/footer.section.ejs') %>
+<%- include('components/footer.ejs') %>

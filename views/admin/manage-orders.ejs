@@ -1,0 +1,60 @@
+<hr class="text-primary d-block p-1">
+
+<div class="">
+    <form method="post" class="d-flex justify-content-between">
+        <input class="btn btn-primary btn-sm px-5 rounded-pill" type="submit" value="All Products" name="all" formaction="/admin/manage">
+        <input class="btn btn-primary btn-sm px-5 rounded-pill" type="submit" value="Pending" name="pending" formaction="/admin/manage">
+        <input class="btn btn-primary btn-sm px-5 rounded-pill" type="submit" value="Sent" name="sent" formaction="/admin/manage">
+        <input class="btn btn-primary btn-sm px-5 rounded-pill" type="submit" value="Completed" name="compeleted" formaction="/admin/manage">
+    </form>
+</div>
+
+<hr class="text-primary mb-5 p-1">
+
+<div class="row">
+    <table class="table col-12">
+        <thead>
+            <tr>
+                <th scope="col">Products</th>
+                <th scope="col">Address</th>
+                <th scope="col">Status</th>
+                <th scope="col">Time</th>
+                <th scope="col">Total</th>
+                <th scope="col">Update</th>
+            </tr>
+        </thead>
+            <tbody style="font-size: 12px;">
+                <% if(typeof(orders[0] !== 'undefined')) { %>
+                    <% for(let order of orders) {%>
+                        <td class="text-primary"> <strong>Email</strong> <%= ` : ${order.userEmail}` %></td>
+                        <tr class="col-12 border">
+                            <td>
+                                <% const products = JSON.parse(order.productsOfCart); %>
+                                <ul class="p-0">
+                                <% for(let product of products) { %>
+                                    <li> <%= `${product.title} : ${product.amount}` %> </li>
+                                <% } %>
+                                </ul>
+                            </td>
+                            <td> <%= order.address %> </td>
+                            <td> 
+                            <form action="/admin/manage/update-order" method="post" id="<%= order._id %>">
+                                <input type="hidden" name="orderId" value="<%= order._id %>">
+                                <select class="btn" name="<%= order._id %>">
+                                    <option value="current"><%= order.status %></option>
+                                    <option value="pendding">Pendding</option>
+                                    <option value="sent">Sent</option>
+                                    <option value="compeleted">Compeleted</option>
+                                </select>
+                            </form>
+                            </td>
+                            <td> <%= order.timestamp %> </td>
+                            <td> <%= order.total %> </td>
+                            <td> <button class="btn btn-sm btn-warning text-light rounded-pill" form="<%= order._id %>">Update</button> </th>
+                        </tr>
+                    <% } %>
+                <% } %>
+            </tbody>
+    </table>
+
+</div>

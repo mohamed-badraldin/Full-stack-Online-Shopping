@@ -1,0 +1,235 @@
+<% let isAuth = ''; %>
+<%- include('components/header.ejs') %>
+<%- include('components/nav.ejs') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-lg-10 m-auto">
+            <div class="my-5">
+                <span>March 2022</span>
+                <p class="h1">Design and Implementation of E-Commerce Site for Online Shopping</p>
+                <span class="my-1 d-block my-2 text-primary">Mohamed Badraldin</span>
+                <span class="my-1 d-block my-2">Information Technology Institute </span>
+            </div>
+            <div class="my-5">
+                <span class="h4 text-primary">LEARNING OUTCOMES</span>
+                <span class="h5 d-block m-2">Hands-on</span>
+                <ul class="mx-5">
+                    <li>Build a full-stack e-commerce website.</li>
+                    <li>UI UX design.</li>
+                    <li>Responsive web design.</li>
+                    <li>Authentication and Authorization processes.</li>
+                    <li>Three tier architecture.</li>
+                    <li>Node Modular Architecture.</li>
+                    <li>Error handler middleware.</li>
+                    <li>Naming conventions.</li>
+                    <li>Best practices for writing documentation</li>
+                    <li>Deploying and hosting</li>
+                </ul>
+            </div>
+            <div class="my-5">
+                <span class="h4 text-primary">NPM PACKAGES</span>
+                <ul class="mx-5">
+                    <li>express</li>
+                    <li>mongodb</li>
+                    <li>mongoose</li>
+                    <li>ejs</li>
+                    <li>bcrypt</li>
+                    <li>express-validator</li>
+                    <li>multer</li>
+                    <li>express-session</li>
+                    <li>connect-mongodb-session</li>
+                    <li>connect-flash</li>
+                </ul>
+            </div>
+            <div class="my-5">
+                <span class="h4 text-primary my-3 d-block">INTRODUCTION</span>
+                <ul class="mx-5">
+                    <li>An online store is a virtual store on the Internet where customers can browse the catalog and select products of interest.</li>
+                    <li>The selected items may be collected in a shopping cart.</li>
+                    <li>The items in the shopping cart will be presented as an order.</li>
+                    <li>Usually, the customer will be asked to Fill in a billing address.</li>
+                    <li>You can look at each product separately through its own page.</li>
+                    <li>You can choose a specific category while searching for your own product.</li>
+                    <li>There is a part on the site for the administrators, where they can control the status of the orders, as well as search for orders through a specific category, and they can also add a new product to the site.</li>
+                </ul>
+            </div>
+            <div>
+                <span class="h4 d-block text-primary my-3">Web Pages</span>
+                <ul class="mx-5">
+                    <li>HOME PAGE</li>
+                    <li>PRODUCT PAGE</                                                                                                                                                                                                                                                                                                                                                                             li>
+                    <li>CHART VIEW FOR USER</li>
+                    <li>ORDER VIEW FOR USER</li>
+                    <li>ADDRESS PAGE</li>
+                    <li>DOCUMENTATION PAGE</li>
+                    <li>ABOUT PAGE</li>
+                    <li>ADMIN PAGE</li>
+                    <li>ADD NEW PRODUCT</li>
+                    <li>EDIT ORDERS PAGE</li>
+                    <li>REGISTER PAGE</li>
+                    <li>LOGIN</li>
+                    <li>NOT FOUND PAGE</li>
+                    <li>SERVER ERROR PAGE</li>
+                </ul>
+            </div>
+            <div>
+                <span class="h4 text-primary mt-5 mb-3 d-block">Description</span>
+                <ul class="">
+                    <li>Any member can register and view available products, documentation and about pages</li>
+                    <li>Only registered member can purchase multiple products regardless of quantity.</li>
+                    <li>There are three roles available: Visitor, User and Admin.
+                        <ul class="pt-2 mx-5 mb-3">
+                            <li>Visitor can view available products.</li>
+                            <li>User can view and purchase products.</li>
+                            <li>An Admin has some extra privilege including all privilege of visitor and user.
+                                <ul class="pt-2">
+                                    <li>Admin can add products.</li>
+                                    <li>Admin can add track and edit orders.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <span class="h5">Master page details</span>
+                <p>OnlineShopping Master Page (Similar MasterPage for Visitor, User and Admin)</p>
+            </div>
+            <div>
+                <span class="h5">Project Detail</span>
+                <p>Three Tier Architechture</p>
+                <img  class="w-100" src="/images/documentation/3-tier.jpg" alt="">
+            </div>
+            <div>
+                <span class="h5">SYSTEM REQUREMENTS</span>
+                <span class="h6 d-block my-2 my-2">USE-CASE DIAGRAM:</span>
+                <img  class="w-30 d-block my-2 m-auto" src="/images/documentation/usecase digram.png" alt="">
+            </div>
+            <div>
+                <span class="h4 text-primary mt-5 mb-3 d-block"> ONLINE SHOPPING APPLICATION:</span>
+                <ul>
+                    <li>Anyone can view the Online Shopping portal and available products, but every user must log in by his/her email and password in order to purchase or order products.</li>
+                    <li>Unregistered members can register by navigating to the registration page. </li>
+                    <li>Only Admin will have access to modify roles, by default developer can only be an Admin. </li>
+                    <li>Once the user registers the site, his default role will be User.</li>
+                </ul>
+            </div>
+            <div class="row">
+                    <div class="col-sm-12 col-md-6 my-5 col-lg-4">
+                        <span class="h5 text-primary mt-5 mb-3 d-block">HOME PAGE:</span>
+                        <ul style="height: 250px;">
+                        <li class="my-1">The Home Screen will consist of screen were one can browse through the products which we have on our website.</li>
+                        <li class="my-1">you can add product to cart foreach product.</li>
+                        <li class="my-1">you can show product page foreach product.</li>
+                        </ul>
+                        <img  class="w-100 d-block my-2 m-auto" src="/images/documentation/home.png" alt="">
+                    </div>
+                    <div class="col-sm-12 col-md-6 my-5 col-lg-4">
+                        <span class="h5 text-primary mt-5 mb-3 d-block"> PRODUCT PAGE:</span>
+                        <ul style="height: 250px;">
+                            <li class="my-1">This page consists of product details.</li>
+                            <li class="my-1">This page appears same for both visitors and users.</li>
+                            <li class="my-1">you can add product to cart from add to cart button.</li>
+                            <li class="my-1">you can back to home.</li>
+                        </ul>
+                        <img  class="w-100 d-block m-auto my-3" src="/images/documentation/product.png" alt="">
+                    </div>
+                    <div class="col-sm-12 col-md-6 my-5 col-lg-4">
+                        <span class="h5 text-primary mt-5 mb-3 d-block"> CART PAGE:</span>
+                        <ul style="height: 250px;">
+                            <li class="my-1">This page consists of product details.</li>
+                            <li class="my-1">count of each product.</li>
+                            <li class="my-1">you can update count of each product.</li>
+                            <li class="my-1">you can delete each product from cart.</li>
+                            <li class="my-1">button to make your order.</li>
+                            <li class="my-1">summary: count of products, total price.</li>
+                        </ul>
+                        <img  class="w-100 d-block my-2 m-auto my-3" src="/images/documentation/cart.png" alt="">
+                    </div>
+                    <div class="col-sm-12 col-md-6 my-5 col-lg-4">
+                        <span class="h5 text-primary mt-5 mb-3 d-block"> ADDRESS PAGE:</span>
+                        <ul style="height: 250px;">
+                            <li class="my-1">This page consists of input field to set order's address</li>
+                        </ul>
+                        <img  class="w-100 d-block my-2 m-auto my-3" src="/images/documentation/address.png" alt="">
+                    </div>
+                    <div class="col-sm-12 col-md-6 my-5 col-lg-4">
+                        <span class="h5 text-primary mt-5 mb-3 d-block"> ORDERS PAGE:</span>
+                        <ul style="height: 250px;">
+                            <li class="my-1">This page consists of details of orders foreach user</li>
+                            <li class="my-1">details: name, description, quantity, total of each product, address, date total of all order</li>
+                            <li class="my-1">defualt status of any order is pendding</li>
+                        </ul>
+                        <img  class="w-100 d-block my-2 m-auto my-3" src="/images/documentation/orders.png" alt="">
+                    </div>
+                    <div class="col-sm-12 col-md-6 my-5 col-lg-4">
+                        <span class="h5 text-primary mt-5 mb-3 d-block"> DASHBOARD HOME PAGE:</span>
+                        <ul style="height: 250px;">
+                            <li class="my-1">This page consists just picture reprsent dummy information</li>
+                            <li class="my-1">Sidebar to navigate between dashboard pages with animation and buttons to open and close it</li>
+                            <li class="my-1">Sidebar: dashboard home page, add product page, manage orders page and back to home button</li>
+                        </ul>
+                        <img  class="w-100 d-block my-2 m-auto my-3" src="/images/documentation/dashboard.png" alt="">
+                    </div>
+                    <div class="col-sm-12 col-md-6 my-5 col-lg-4">
+                        <span class="h5 text-primary mt-5 mb-3 d-block"> ADD PRODUCT PAGE:</span>
+                        <ul style="height: 250px;">
+                            <li class="my-1">This page consists of add new product form</li>
+                            <li class="my-1">There ara validation errors foreach field</li>
+                            <li class="my-1">There are alert appear after adding a product successfly</li>
+                        </ul>
+                        <img  class="w-100 d-block my-2 m-auto my-3" src="/images/documentation/add-product.png" alt="">
+                    </div>
+                    <div class="col-sm-12 col-md-6 my-5 col-lg-4">
+                        <span class="h5 text-primary mt-5 mb-3 d-block"> MANAGE ORDERS PAGE:</span>
+                        <ul style="height: 250px;">
+                            <li class="my-1">This page consists of all orders with details</li>
+                            <li class="my-1">admin can update the status of order</li>
+                            <li class="my-1">admin can get orders with specific status</li>
+                        </ul>
+                        <img  class="w-100 d-block my-2 m-auto my-3" src="/images/documentation/manage.png" alt="">
+                    </div>
+                    <div class="col-sm-12 col-md-6 my-5 col-lg-4">
+                        <span class="h5 text-primary mt-5 mb-3 d-block"> SIGNUP PAGE:</span>
+                        <ul style="height: 260px;">
+                            <li class="my-1">This page consists of form to signup</li>
+                            <li class="my-1">button to redirect login page if you have an account and you can go to home from the logo</li>
+                            <li class="my-1">validation errers: if the email already exist, valid email, username must be more than 5 characters and password must identical the confirmation password</li>
+                        </ul>
+                        <img  class="w-100 d-block my-2 m-auto my-3" src="/images/documentation/signup.png" alt="">
+                    </div>
+                    <div class="col-sm-12 col-md-6 my-5 col-lg-4">
+                        <span class="h5 text-primary mt-5 mb-3 d-block"> LOGIN PAGE:</span>
+                        <ul style="height: 150px;">
+                            <li class="my-1">This page consists of form to login</li>
+                            <li class="my-1">validation errers: if the email already not exist and if the email and password not correct</li>
+                        </ul>
+                        <img  class="w-100 d-block my-2 m-auto my-3" src="/images/documentation/login.png" alt="">
+                    </div>
+            </div>
+            <div>
+                <p class="h2 text-primary my-5">Data Management</p>
+                <span class="h3 text-primary d-block my-3">Data Description</span>
+                <span class="h5 d-block">This database consists of </span>
+                    <ul>
+                        <li>users: User and Admin information is added to database with Unique ID based on their roles.</li>
+                        <li>products: Complete products information is stored in this table.</li>
+                        <li>orders: Customer ordered products and status is stored in this table.</li>
+                        <li>carts: Customer cart's products information.</li>
+                        <li>sessions: Customer session for Authentication and Authorization.</li>
+                    </ul>
+                <span class="h5 text-primary d-block my-3">Data Objects</span>
+                    <ul class="mb-5">
+                        <li>User: Id, username, email, password and isAdmin</li>
+                        <li>Product: Id, title, price, description, category, image and rating</li>
+                        <li>Order: Id, Client, Product, Quantity, Price, Date, OrderShipped</li>
+                        <li>Order: Id, userId, userEmail, productsOfCart, address, status, total and timestamp</li>
+                        <li>Cart: Id, title, price, image, description, amount, userId, productId and timestamp</li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('components/footer.section.ejs') %>
+<%- include('components/footer.ejs') %>

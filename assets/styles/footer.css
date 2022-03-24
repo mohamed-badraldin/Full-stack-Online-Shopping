@@ -1,0 +1,23 @@
+/* footer */
+
+footer {
+    color: #caced1 !important;
+}
+
+footer li {
+    margin-top: 19px;
+    margin-bottom: 19px
+}
+
+.Careers {
+    cursor: pointer;
+    color: #1E88E5
+}
+
+.row-1 {
+    background-color: #1E242A !important
+}
+
+.row-2 {
+    background-color: #28323C !important
+}

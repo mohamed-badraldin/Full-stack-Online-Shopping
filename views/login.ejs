@@ -1,0 +1,33 @@
+<%- include('components/header.ejs') %>
+
+    <div class="container d-flex justify-content-center my-5">
+      <div class="d-flex flex-column justify-content-between col-sm-6">
+          <div class="card mt-3 p-5 ">
+              <div class="logo mb-3"><a href="/"><img src="/images/B.png"></a></div>
+              <div>
+                  <p class="mb-1">Happiness is not in money</p>
+                  <h4 class="mb-5 text-white">but in shopping!</h4>
+              </div>
+          </div>
+          <div class="card two bg-white px-5 py-4 mb-3">
+            <form action="/login" method="post" id="signup">
+              
+              <div class="form-group">
+                <input name="email" type="email" class="form-control" id="mail" required>
+                <label class="form-control-placeholder" for="mail">Email</label>
+                <% if(data[0]?.email) {%> <small class="text-danger">Email must be a valid email</small> <%}%>
+              </div>
+              <div class="form-group">
+                <input name="password" type="password" class="form-control" id="password" required>
+                <label class="form-control-placeholder" for="password">Password</label>
+                <% if(data[0]?.password) {%> <small class="text-danger">Password must be at least 5 chars long</small> <%}%>
+              </div>
+            </form>
+            <% if(authError){ %>
+              <small class="text-danger my-3"><%= authError %></small>
+              <%}%>
+              <button type="submit" form="signup" class="btn btn-primary btn-block btn-lg mt-1 mb-2"><span>Get started<i class="fas fa-long-arrow-alt-right ml-2"></i></span></button>
+          </div>
+      </div>
+    </div>
+<%- include('components/footer.ejs') %>

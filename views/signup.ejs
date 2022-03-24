@@ -1,0 +1,45 @@
+<%- include('components/header.ejs') %>
+
+<div class="container d-flex justify-content-center">
+  <div class="d-flex flex-column justify-content-between col-sm-6">
+      <div class="card mt-3 p-5 ">
+          <div class="logo mb-3"><a href="/"><img src="/images/B.png"></a></div>
+          <div>
+              <p class="mb-1">Happiness is not in money</p>
+              <h4 class="mb-5 text-white">but in shopping!</h4>
+          </div><a href="/login"><button class="btn btn-primary btn-lg col-md-12"><small>Already signed up?</small><span>&nbsp;Log in</span> </button></a>
+      </div>
+      <div class="card two bg-white px-5 py-4 mb-3">
+        <form action="/signup" method="post" id="signup">
+          <div class="form-group">
+            <input name="username" type="text" class="form-control" id="name" value="<%= data[1]?.username%>">
+            <label class="form-control-placeholder" for="name">Full Name</label>
+            <% if(data[0]?.username) {%> <small class="text-danger"><%=data[0].username.msg%></small> <%}%>
+          </div>
+          <div class="form-group">
+            <input name="email" type="email" class="form-control" id="mail" value="<%= data[1]?.email%>">
+            <label class="form-control-placeholder" for="mail">Email</label>
+            <% if(data[0]?.email) {%> <small class="text-danger"><%=data[0].email.msg%></small> <%}%>
+            <% if(authError) {%> <small class="text-danger"><%=authError%></small> <%}%>
+          </div>
+          <div class="form-group">
+            <input name="password" type="password" class="form-control" id="password" value="<%= data[1]?.password%>">
+            <label class="form-control-placeholder" for="password">Password</label>
+            <% if(data[0]?.password) {%> <small class="text-danger"><%=data[0].password.msg%></small> <%}%>
+          </div>
+          <div class="form-group">
+            <input name="confirmPassword" type="password" class="form-control" id="password" value="<%= data[1]?.confirmPassword%>">
+            <label class="form-control-placeholder" for="password">Confirm Password</label>
+            <% if(data[0]?.confirmPassword) {%> <small class="text-danger"><%=data[0].confirmPassword.msg%></small> <%}%>
+          </div>
+        </form>
+          <button type="submit" form="signup" class="btn btn-primary btn-block btn-lg mt-1 mb-2"><span>Get started<i class="fas fa-long-arrow-alt-right ml-2"></i></span></button>
+      </div>
+  </div>
+</div>
+
+
+
+
+<%- include('components/footer.ejs') %>
+

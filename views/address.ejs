@@ -1,0 +1,20 @@
+<%- include('components/header.ejs') %>
+<%- include('components/nav.ejs') %>
+<div class="col-sm-6 offset-3 my-5">
+
+    <div class="card">
+      <h3 class="card-header bg-light text-primary"><i class="bi bi-geo-alt-fill"></i> Address</h3>
+      <div class="card-body">
+        <form action="/order" method="post" class="col-sm-8 offset-2">
+          <input type="text" name="address" class="form-control my-5">
+          <% if(validationErrors?.address) {%><small class="text-danger"> <%= validationErrors.address.msg %> </small> <%}%>
+        <input type="hidden" name="productAsString" value="<%= productAsString %>">
+        <input type="hidden" name="total" value="<%= total %>">
+        <input type="submit" class="btn btn-primary col-sm-3 float-end" value="Next Step">
+      </form>
+      </div>
+    </div>
+
+</div>
+<%- include('components/footer.section.ejs') %>
+  <%- include('components/footer.ejs') %>
